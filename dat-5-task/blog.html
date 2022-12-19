@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Dicky</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="Asset/css/style.css">
+</head>
+  <body style="height: 2000px;">
+    
+    
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color:rgb(160, 150, 160);">
+        <div class="container" height: fit-content;>
+          <a class="navbar-brand" href="#">
+            <img src="Asset/img/brandred.png" alt="Logo" width="32" height="25" class="d-inline-block align-text-top"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="blog.html">My Project</a>
+                    </li>  
+                </ul>
+            </div>
+            <div class="position-relative">
+                <div class="d-flex">
+                    <a class="btn btn-dark rounded-3" href="contact.html">Contact Me</a>
+                </div>
+            </div>
+            </div>
+        </div>
+      </nav>
+<!-- END NAVBAR -->
+
+<!-- CONTAINER -->
+<div class="container-fluid bg-light" style="padding-bottom: 20px ;">
+
+  <div class="container">
+<!-- BREADCRUMB -->
+<nav class="my-0 py-3" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Dicky</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Project</li>
+  </ol>
+</nav>    
+<!-- END BREADCUMB -->
+  </div>
+
+
+<!-- MAIN CARD -->
+
+
+<div class="py-3">
+    <div class="container">
+        <h1 class="fw-semi-bold text-center">ADD MY PROJECT</h1>
+    </div>
+    
+    <!-- FORM -->
+    <form class="row g-4 my-0 mx-auto" style="width: 50%;" onsubmit="addBlog(event); this.reset(); return false;" class="form-contact">
+        <div class="col-md-12">
+          <label for="inputProject" class="form-label fw-bold fs-5">Project Name</label>
+          <input type="text" class="form-control" id="inputProject">
+        </div>
+        <div class="col-md-6">
+          <label for="startDate" class="form-label fw-bold fs-5">Start Date</label>
+          <input type="date" class="form-control" id="startDate">
+        </div>
+        <div class="col-6">
+          <label for="endDate" class="form-label fw-bold fs-5">End Date</label>
+          <input type="date" class="form-control" id="endDate">
+        </div>
+        <div class="col-md-12">
+          <label for="inputDescription" class="form-label fw-bold fs-5">Description</label>
+          <textarea class="form-control" id="inputDescription" rows="3"></textarea>
+        </div>
+        <div class="row pt-4" style="padding-right: 50%;">
+              <label for="inputTechnologies" class="form-label fw-bold fs-5">Technologies</label>
+              <div class="col-6">
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1">
+                      <label class="form-check-label" for="inlineCheckbox1">Node JS</label>
+                  </div>
+              </div>
+              <div class="col-6">
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2">
+                      <label class="form-check-label" for="inlineCheckbox2">React JS</label>
+                  </div>
+              </div>
+            <div class="col-6">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3">
+                    <label class="form-check-label" for="inlineCheckbox3">Next JS</label>
+                </div>
+            </div>
+              <div class="col-6">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4">
+                    <label class="form-check-label" for="inlineCheckbox4">TypeScript</label>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-12">
+          <label for="inputSubject" class="form-label fw-bold fs-5">Subject</label>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputFile"><i class="bi bi-upload"></i></label>
+            <input type="file" class="form-control" id="inputFile">
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-dark rounded-4 float-end" style="width: 20%;">Submit</button>
+        </div>
+      </form>
+    <!-- END FORM -->
+</div>
+<!-- END MAIN CARD -->
+</div>
+<!-- END CONTAINER -->
+
+
+
+<div class="container-fluid bg-white">
+    <div class="container">
+        <div class="row justify-content-center align-items-center g-2 mt-4">
+            <h1 class="fw-semi-bold text-center mb-5">ADD MY PROJECT</h1>
+
+                <div id="contents" class="row">
+                  <div class="col-4 my-4 d-flex justify-content-around">
+                    <div class="card" style="width: 18rem;">
+                        <img src="Asset/img/sosok-hatsune-miku-1.jpg" class="card-img-top img-fluid"alt="...">
+                        <div class="card-body">
+                        <a href="blog-detail.html" class="text-dark text-decoration-none">
+                            <h3 class="card-title">Hatsune Miku</h3>
+                            <p class="font-weight-light text-muted"> Jangka Waktu : 2 Bulan atau 60 Hari</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias beatae fugiat ipsam? Eveniet iusto itaque ducimus maiores ea magnam autem consequatur optio ipsum, at obcaecati, vero veniam possimus voluptates molestiae.</p>
+                        </a>
+                    <h3>
+                        <i class="fa-brands fa-node-js"></i>
+                        <i class="fa-brands fa-react"></i>
+                        <i class="fa-brands fa-js"></i>
+                        <i class="fa-brands fa-typo3"></i>
+                    </h3>
+        
+                        
+                        <ul class="list-group list-group-flush">
+                            
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <a href="#" class="btn mx-2 col-5 btn-dark d-inline-block rounded-4">Edit</a>
+                                    <a href="#" class="btn mx-2 col-5 btn-dark d-inline-block rounded-4">Delete</a>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    
+                        </div>
+                    </div>
+            </div>
+                </div>
+            </div>
+
+
+
+
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+<script src="Asset/js/blog.js"></script>
+</body>
+</html>

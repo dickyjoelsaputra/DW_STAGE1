@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Dicky</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+  <body>
+    
+    
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color:rgb(160, 150, 160);">
+        <div class="container" height: fit-content;>
+          <a class="navbar-brand" href="#">
+            <img src="/public/img/brandred.png" alt="Logo" width="32" height="25" class="d-inline-block align-text-top"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="/blog">Add Project</a>
+                    </li>  
+                </ul>
+            </div>
+            <div class="position-relative">
+                <div class="d-flex">
+                    <a class="btn btn-dark rounded-3" href="/contact">Contact Me</a>
+                </div>
+            </div>
+            </div>
+        </div>
+      </nav>
+<!-- END NAVBAR -->
+
+<!-- CONTAINER -->
+<div class="container-fluid bg-light pb-5">
+    <div class="container">
+        <!-- BREADCRUMB -->
+        <nav class="my-0 py-3" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Dicky</a></li>
+            <li class="breadcrumb-item"><a href="/blog">Add Project</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Detail Project</li>
+        </ol>
+        </nav>    
+        <!-- END BREADCUMB -->
+
+        <!-- MAIN -->
+        <div class="justify-content-center align-items-center m-5">
+            <h1 class="fw-semi-bold text-center mb-5">{{ .Title }}</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-7">
+                <img class="img-fluid" src="/public/img/sosok-hatsune-miku-1.jpg" alt="">
+            </div>
+            <div class="col-4 offset-1 p-3">
+                <h4>Duration</h4>
+
+                <div class="card-header">
+                    <span class="d-inline-block btn float-right fs-5">
+                        <i class="bi bi-calendar3"></i>
+                    </span>
+                    <span class="d-inline-block">Cars waiting pedestrians cross the street</span>
+                </div>
+
+                <div class="card-header">
+                    <span class="d-inline-block btn float-right  fs-5">
+                        <i class="bi bi-clock"></i>
+                    </span>
+                    <span class="d-inline-block">Cars waiting pedestrians cross the street</span>
+                </div>
+
+                <h4>Technologies</h4>
+                <div class="row g-4">
+                    <div class="col-6">
+                        <div class="card-header">
+                            <span class="fs-5">
+                                <img class="img-fluid btn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/120px-Node.js_logo.svg.png?20170401104355" alt="">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card-header">
+                            <span class="fs-5">
+                                <img class="img-fluid btn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/a/a7/20220125121206%21React-icon.svg/120px-React-icon.svg.png" alt="" srcset="">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card-header">
+                            <span class="fs-5">
+                               <img class="img-fluid btn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/120px-Nextjs-logo.svg.png" alt="">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card-header">
+                            <span class="fs-5">
+                                <img class="img-fluid btn mx-auto d-block" width="70%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/120px-Typescript_logo_2020.svg.png?20210506173343" alt="" srcset="">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content mt-5">
+            <p style="text-align: justify;">
+                {{ .Description }}
+            </p>
+        </div>
+        <!-- END MAIN -->
+
+
+    </div>
+</div>
+<!-- END CONTAINER -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+<script src="public/js/blog.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dicky - Contact</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- header -->
+        <header>
+            <nav>
+                <!--left -->
+                <div class="nav-left">
+                    <a href="#">
+                        <img src="asset/img/brandred.png">
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- right -->
+                <div class="nav-right">
+                    <a href="contact.html">Contact Me</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- container -->
+        <div class="container">
+            <h1 class="gettouch"><b>GET IN TOUCH</b></h1>
+            <br>
+            <form method="post" enctype="text/plain" class="form-contact">
+                <div>
+                    <label for="name">Name</label>
+                    <input id="name" type="text" required placeholder="Input your name">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input id="email" type="email" required placeholder="Input your e-mail">
+                </div>
+                <div>
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" type="tel" required placeholder="Input your number">
+                </div>
+                <div>
+                    <label for="subject">Subject</label>
+                    <select id="subject">
+                            <option>Let's Collaboration</option>
+                            <option>Let's Create Project</option>
+                            <option>Let's Talk</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message">Your Message</label>
+                    <textarea id="message" style="height: 150px;" placeholder="Input your message"></textarea>
+                </div>
+                <button type="submit" onclick="sendEmail()">submit</button>
+            </form>
+
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

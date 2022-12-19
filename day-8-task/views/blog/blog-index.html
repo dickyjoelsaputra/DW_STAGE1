@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap Dicky</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="public/css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav
+      class="navbar navbar-expand-lg sticky-top"
+      style="background-color: rgb(160, 150, 160)"
+    >
+      <div class="container" height: fit-content;>
+      <a class="navbar-brand" href="#">
+        <img
+          src="/public/img/brandred.png"
+          alt="Logo"
+          width="32"
+          height="25"
+          class="d-inline-block align-text-top"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="/blog">Add Project</a>
+          </li>
+        </ul>
+      </div>
+      <div class="position-relative">
+        <div class="d-flex">
+          <a class="btn btn-dark rounded-3" href="/contact">Contact Me</a>
+        </div>
+      </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- CONTAINER -->
+    <div class="container-fluid bg-light" style="padding-bottom: 20px">
+      <div class="container">
+        <!-- BREADCRUMB -->
+        <nav
+          class="my-0 py-3"
+          style="--bs-breadcrumb-divider: '>'"
+          aria-label="breadcrumb"
+        >
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Dicky</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Project</li>
+          </ol>
+        </nav>
+        <!-- END BREADCUMB -->
+      </div>
+      <!-- MAIN CARD -->
+
+      <div class="py-3">
+        <div class="container">
+          <h1 class="fw-semi-bold text-center">ADD MY PROJECT</h1>
+          <a class="btn btn-primary mx-3 rounded-4" href="/blog-create"
+            >Add blog post</a
+          >
+
+          <!-- START ROW -->
+          <div id="contents" class="row">
+            {{ range $index,$data := .Blogs }}
+            <div class="col-4 my-4 d-flex justify-content-around">
+              <div class="card" style="width: 20rem">
+                <img
+                  src="public/img/sosok-hatsune-miku-1.jpg"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <a
+                    href="/blog/{{ $index }}"
+                    class="text-dark text-decoration-none"
+                  >
+                    <h3 class="card-title">{{ $data.Title }}</h3>
+                    <p class="font-weight-light text-muted">
+                      {{ $data.Start_date }} || {{ $data.End_date }}
+                    </p>
+                    <p class="font-weight-light text-muted">
+                      By : {{ $data.Author }}
+                    </p>
+                    <p class="card-text">{{ $data.Description }}</p>
+                  </a>
+                  <h3>
+                    {{if eq (index $data.Technologies 0) "checked"}}
+                    <i class="fa-brands fa-node-js"></i>
+                    {{end}}{{if eq (index $data.Technologies 1) "checked"}}
+                    <i class="fa-brands fa-react"></i>
+                    {{end}} {{if eq (index $data.Technologies 2) "checked"}}
+                    <i class="fa-brands fa-js"></i>
+                    {{end}} {{if eq (index $data.Technologies 3) "checked"}}
+                    <i class="fa-brands fa-typo3"></i>
+                    {{end}}
+                  </h3>
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <div class="row">
+                        <a
+                          href="/blog-edit/{{ $index }}"
+                          class="btn mx-2 col-5 btn-info d-inline-block rounded-4"
+                          >Edit</a
+                        >
+                        <a
+                          href="/blog-delete/{{ $index }}"
+                          class="btn mx-2 col-5 btn-danger d-inline-block rounded-4"
+                          >Delete</a
+                        >
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+          <!-- END ROW -->
+        </div>
+      </div>
+      <!-- END MAIN CARD -->
+    </div>
+    <!-- END CONTAINER -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="public/js/blog.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap Dicky</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="public/css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav
+      class="navbar navbar-expand-lg sticky-top"
+      style="background-color: rgb(160, 150, 160)"
+    >
+      <div class="container" height: fit-content;>
+      <a class="navbar-brand" href="#">
+        <img
+          src="/public/img/brandred.png"
+          alt="Logo"
+          width="32"
+          height="25"
+          class="d-inline-block align-text-top"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="/blog">Add Project</a>
+          </li>
+        </ul>
+      </div>
+      <div class="position-relative">
+        <div class="d-flex">
+          <a class="btn btn-dark rounded-3" href="/contact">Contact Me</a>
+        </div>
+      </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- CONTAINER -->
+    <div class="container-fluid bg-light" style="padding-bottom: 20px">
+      <div class="container">
+        <!-- BREADCRUMB -->
+        <nav
+          class="my-0 py-3"
+          style="--bs-breadcrumb-divider: '>'"
+          aria-label="breadcrumb"
+        >
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Dicky</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Project</li>
+          </ol>
+        </nav>
+        <!-- END BREADCUMB -->
+      </div>
+
+      <!-- MAIN CARD -->
+
+      <div class="py-3">
+        <div class="container">
+          <h1 class="fw-semi-bold text-center">ADD MY PROJECT</h1>
+        </div>
+
+        <!-- FORM -->
+        <form
+          action="/blog-update/{{ .Index }}"
+          method="post"
+          class="row g-4 my-0 mx-auto"
+          style="width: 50%"
+          class="form-contact"
+        >
+          <div class="col-md-12">
+            <label for="inputProject" class="form-label fw-bold fs-5"
+              >Project Name</label
+            >
+            <input
+              name="inputTitle"
+              type="text"
+              class="form-control"
+              id="inputProject"
+              value="{{ .Blog.Title }}"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="startDate" class="form-label fw-bold fs-5"
+              >Start Date</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="startDate"
+              name="startDate"
+              value="{{ .Blog.Start_date }}"
+            />
+          </div>
+          <div class="col-6">
+            <label for="endDate" class="form-label fw-bold fs-5" name="endDate"
+              >End Date</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="endDate"
+              name="endDate"
+              value="{{ .Blog.End_date }}"
+            />
+          </div>
+          <div class="col-md-12">
+            <label for="inputDescription" class="form-label fw-bold fs-5"
+              >Description</label
+            >
+            <textarea
+              name="inputDescription"
+              class="form-control"
+              id="inputDescription"
+              rows="3"
+            >
+            {{ .Blog.Description }}
+            </textarea>
+          </div>
+          <div class="row pt-4" style="padding-right: 50%">
+            <label for="inputTechnologies" class="form-label fw-bold fs-5"
+              >Technologies</label
+            >
+            <div class="col-6">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox1"
+                  name="inlineCheckbox1"
+                  {{(index
+                  .Blog.Technologies
+                  0)}}
+                />
+                <label class="form-check-label" for="inlineCheckbox1"
+                  >Node JS</label
+                >
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox2"
+                  name="inlineCheckbox2"
+                  {{(index
+                  .Blog.Technologies
+                  1)}}
+                />
+                <label class="form-check-label" for="inlineCheckbox2"
+                  >React JS</label
+                >
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  name="inlineCheckbox3"
+                  {{(index
+                  .Blog.Technologies
+                  2)}}
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Next JS</label
+                >
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox4"
+                  name="inlineCheckbox4"
+                  {{(index
+                  .Blog.Technologies
+                  3)}}
+                />
+                <label class="form-check-label" for="inlineCheckbox4"
+                  >TypeScript</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="inputSubject" class="form-label fw-bold fs-5"
+              >Subject</label
+            >
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputFile"
+                ><i class="bi bi-upload"></i
+              ></label>
+              <input type="file" class="form-control" id="inputFile" />
+            </div>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="btn btn-dark rounded-4 float-end"
+              style="width: 20%"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+        <!-- END FORM -->
+      </div>
+      <!-- END MAIN CARD -->
+    </div>
+    <!-- END CONTAINER -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="public/js/blog.js"></script> -->
+  </body>
+</html>
